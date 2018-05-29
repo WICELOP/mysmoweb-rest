@@ -61,7 +61,7 @@
     </header>
     <div class="mdl-layout__drawer">
       <div class="nav-md">
-        <!-- da modificare -->
+        <!-- da modificare... -->
         <span class="mdl-layout-title"><?php echo $_SESSION[KEY_LOGGED_IN] ?></span>
       </div>
       <nav class="mdl-navigation">
@@ -73,7 +73,7 @@
               class="material-icons md-ip">library_add</i>
               Aggiungi buoni sconto</a>
               <div class="mdl-layout-spacer"></div>
-              <a class="mdl-navigation__link" href="segnalaBug.php"><i class="material-icons md-ip">feedback</i> Feedback</a>
+              <a class="mdl-navigation__link" href="segnalaBug"><i class="material-icons md-ip">feedback</i> Feedback</a>
             </nav>
           </div>
           <main class="mdl-layout__content">

@@ -40,16 +40,26 @@ function aggiungiEsercente($headers, $uri){
     }
 }
 
-function proxyImage($headers, $uri){
+function visualizzaEsercente($headers, $uri){
+    if(strpos($headers["Accept"], 'html') !== false){
         require ('../model/auth.php');
-        require ('../view/proxyImage.php');
-        visualizzaPagina();
+        require ('../view/visualizzaEsercente.php');
+        visualizzaPagina($dbc);
+    }
+}
+
+function proxyImage($headers, $uri){
+    require ('../model/auth.php');
+    require ('../view/proxyImage.php');
+    visualizzaPagina();
 }
 
 function segnalaBug($headers, $uri){
+    if(strpos($headers["Accept"], 'html') !== false){
         require ('../model/auth.php');
         require ('../view/segnalaBug.php');
         visualizzaPagina();
+    }
 }
 
 ?>

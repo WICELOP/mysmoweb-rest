@@ -60,6 +60,17 @@ function get($uri){
             break;
         }
 
+        //pagina per la visualizzazione/gestione degli esercenti
+        case '/visualizzaEsercente':
+        if(isset($uriget)){
+            // $uri = $uri.'?'.$uriget;
+            visualizzaEsercente($headers, $uriget);
+            break;
+        }else{
+            notFound();
+            break;
+        }
+
         //pagina per la visualizzazione dell'immagine
         case '/proxyImage':
         if(isset($uriget)){
