@@ -1,0 +1,210 @@
+/*modifico la classe del drawer per l'assegnazione della dimensione richiesta*/
+.mdl-layout__drawer {
+    width: 300px;
+    left: -50px;
+    border: 0;
+}
+
+.mdl-layout__drawer.is-visible {
+    left: 0;
+}
+
+@media screen and (max-width:1024px){
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link{
+        padding:16px 40px;
+    }
+}
+
+/*classe per la personalizzazione del drawer*/
+.nav-md {
+    width: auto;
+    height: 130px;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    background-color: rgb(63, 81, 181);
+    color: white;
+}
+
+/*classe per posizionare le icone nel drawer*/
+.md-ip {
+    margin-right: 18px;
+}
+
+/*modifica per l'ordinamento degli elementi nella navbar*/
+.mdl-layout__drawer .mdl-navigation {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    padding-top: 16px;
+    flex: auto;
+}
+
+/*classe per la modifica dell'header*/
+.header-style {
+    padding: 0 12px 0 70px;
+}
+
+/*modifico la classe della nav nell'header*/
+.mdl-layout__header-row .mdl-navigation__link {
+    display: block;
+    color: rgb(255, 255, 255);
+    line-height: 64px;
+    padding: 0 12px 0 0;
+}
+
+/*modifico la classe container per l'assegnazione dello sfondo*/
+.mdl-layout__content {
+    background-image: url("../images/sfondo.jpg");
+    background-position: center;
+    -ms-flex: 0 1 auto;
+    position: relative;
+    display: inline-block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Allinea gli elementi figli al centro, verticalmente e orizzontalmente */
+.center-children {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Per i messaggi di errore/output */
+.alert-box {
+    min-height: fit-content;
+    height: fit-content;
+    width: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    color: white;
+}
+
+/* alert a comparsa nel login */
+.flex-alert {
+    display: flex;
+    margin: auto;
+}
+
+.flex-alert p {
+    margin: auto 8px auto auto;
+}
+
+.mdl-textfield {
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.mdl-textfield__input {
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    display: block;
+    font-size: 16px;
+    font-family: "Helvetica","Arial",sans-serif;
+    margin: 0;
+    padding: 4px 0;
+    width: 100%;
+    background: 0 0;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.54);;
+}
+
+.mdl-card__supporting-text {
+    color: rgba(0, 0, 0, .54);
+    font-size: 1rem;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 16px;
+    width: auto;
+}
+
+.mdl-textfield__label {
+    bottom: 0;
+    color: rgba(0,0,0,.4);
+    font-size: 16px;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    top: 24px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.mdl-button--icon .material-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-14px, -14px);
+    transform: translate(-14px, -14px);
+    line-height: 28px;
+    width: 28px;
+}
+
+.mdl-button--fab.mdl-button--colored:hover {
+    background-color: rgb(73, 92, 245);
+}
+
+.mdl-button--fab.mdl-button--colored {
+    background: rgb(63, 81, 181);
+    color: rgb(255,255,255);
+}
+
+.demo-card-wide.mdl-card {
+    width: 600px;
+    margin: 10% auto;
+}
+
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    background-color: rgb(63, 81, 181);
+}
+
+.spc {
+    padding: 0 12px 0 0;
+}
+
+.ftm {
+    padding: 0;
+    margin: 0;
+}
+
+.pr {
+    display: block;
+}
+
+.gr {
+    color: grey;
+    font-size: 28px;
+}
+
+.topcard {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    color: rgba(0, 0, 0, 0);
+    font-weight: 500;
+    display: inline-block;
+}
