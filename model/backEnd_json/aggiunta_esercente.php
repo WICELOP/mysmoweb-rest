@@ -31,9 +31,8 @@ if (!empty($_POST['esercente'])) {
 
     $statement->close();
 
-    $extension = explode(".", $percorso_logo)[1];
+/*    $extension = explode(".", $percorso_logo)[1];
     switch ($extension) {
-        case "jpeg":
         case "jpg":
             $img = resize_imagejpg($percorso_logo, 512, 512);
             imagejpeg($img, $percorso_logo);
@@ -42,24 +41,25 @@ if (!empty($_POST['esercente'])) {
             $img = resize_imagepng($percorso_logo, 512, 512);
             imagepng($img, $percorso_logo);
             break;
-    }
+    }*/
+    
 }
 
 $dbc->close();
 
-function resize_imagejpg($file, $w, $h) {
-    list($width, $height) = getimagesize($file);
-    $src = imagecreatefromjpeg($file);
-    $dst = imagecreatetruecolor($w, $h);
-    imagecopyresampled($dst, $src, 0, 0, 0, 0, $w, $h, $width, $height);
-    return $dst;
-}
+// function resize_imagejpg($file, $w, $h) {
+//     list($width, $height) = getimagesize($file);
+//     $src = imagecreatefromjpeg($file);
+//     $dst = imagecreatetruecolor($w, $h);
+//     imagecopyresampled($dst, $src, 0, 0, 0, 0, $w, $h, $width, $height);
+//     return $dst;
+// }
 
-function resize_imagepng($file, $w, $h) {
-    list($width, $height) = getimagesize($file);
-    $src = imagecreatefrompng($file);
-    $dst = imagecreatetruecolor($w, $h);
-    imagecopyresampled($dst, $src, 0, 0, 0, 0, $w, $h, $width, $height);
-    return $dst;
-}
+// function resize_imagepng($file, $w, $h) {
+//     list($width, $height) = getimagesize($file);
+//     $src = imagecreatefrompng($file);
+//     $dst = imagecreatetruecolor($w, $h);
+//     imagecopyresampled($dst, $src, 0, 0, 0, 0, $w, $h, $width, $height);
+//     return $dst;
+// }
 

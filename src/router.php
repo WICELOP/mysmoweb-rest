@@ -71,6 +71,17 @@ function get($uri){
             break;
         }
 
+        //pagina per la modifica dell'esercente
+        case '/modificaEsercente':
+        if(isset($uriget)){
+            // $uri = $uri.'?'.$uriget;
+            modificaEsercente($headers, $uriget);
+            break;
+        }else{
+            notFound();
+            break;
+        }
+
         //pagina per la visualizzazione dell'immagine
         case '/proxyImage':
         if(isset($uriget)){
@@ -110,6 +121,10 @@ function post($uri){
         
         case '/aggiungiEsercente':
         aggiungiEsercentePost(); 
+        break;
+
+        case '/modificaEsercente':
+        modificaEsercentePost(); 
         break;
 
         case '/uploadImage':

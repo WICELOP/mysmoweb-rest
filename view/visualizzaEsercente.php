@@ -1,24 +1,14 @@
 <?php
 function visualizzaPagina($dbc){
 
-    $_COOKIE['id_amministratore'] = $_GET['id'];
     ob_start();
     require ('../model/backEnd_json/ottieni_esercente_da_id.php');
     $output = ob_get_clean();
     $esercente = json_decode($output, true);
-    $id = $_GET['id'];
 
-    /*assegna il titolo alla pagina*/
     $nomesito = "Visualizza " . $esercente['nome'];
 
     require ('parcials/header.php');
-
-    function ottieniImmagine($percorso)
-    {
-        $array = explode("/", $percorso);
-        return "proxyImage?pic=" . $array[3];
-    }
-
     ?>
 
     <!--Inizio visualizzaEsercente-->
@@ -159,11 +149,21 @@ function visualizzaPagina($dbc){
 </style>
 
 <script>
+
+    function ottieniImmagine(percorso) {
+        var array = percorso.split("/");
+        return "proxyImage?pic=" + array[3];
+    }
+
     $(document).ready(function(){
-        document.getElementById("topcard").className += " topcard";
-        document.getElementById("topcard").style.backgroundImage = "url(<?php echo ottieniImmagine($_SESSION[KEY_POS]) ?>)"
-        componentHandler.upgradeDom();
+        if(ottieniImmagine("<?php echo $esercente['percorso_logo'] ?>") != "proxyImage?pic="){
+            document.getElementById("topcard").className += " topcard";
+            var percorso = "<?php echo $esercente['percorso_logo'] ?>";
+            document.getElementById("topcard").style.backgroundImage = "url('"+ottieniImmagine(percorso)+"')";
+            componentHandler.upgradeDom();
+        }
     });
+
 </script>
 
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
@@ -171,7 +171,7 @@ function visualizzaPagina($dbc){
     <div id="topcard" class="mdl-card__title" style="height: 200px;">
         <h2 class="mdl-card__title-text"><?php echo $esercente['nome']; ?></h2>
         <button id="edit" class="mdl-button mdl-js-button mdl-button--icon"
-        onclick="redirect('modificaEsercente?id=<?php echo $_GET['id'] ?>')">
+        onclick="window.location.href='modificaEsercente?id=<?php echo $_GET['id'] ?>'">
         <i class="material-icons">edit</i>
     </div>
 
@@ -203,7 +203,7 @@ function visualizzaPagina($dbc){
 </div>
 <div class="mdl-card__title">
     <a class="mdl-button mdl-js-button mdl-js-ripple-effect" style="margin: auto;color:white;"
-    href="<?php echo "creaQuestionario?id=" . $id . "&mail=" . $esercente['email']; ?>">
+    href="<?php echo "creaQuestionario?id=" . $_GET['id'] . "&mail=" . $esercente['email']; ?>">
     Crea Questionario
 </a>
 </div>

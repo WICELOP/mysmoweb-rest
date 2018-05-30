@@ -24,11 +24,28 @@
   <script src="js/classi.js"></script>
   <script src="js/funzioni.js"></script>
 
-
   <title><?php echo $nomesito ?></title>
-
 </head>
 <body>
+
+<script>
+
+    function ottieniImmagine(percorso) {
+        var array = percorso.split("/");
+        return "proxyImage?pic=" + array[3];
+    }
+
+    $(document).ready(function(){
+        if(ottieniImmagine("<?php echo $_SESSION[KEY_POS] ?>") != "proxyImage?pic="){
+            document.getElementById("nav-md").className += " topcard";
+            var percorso = "<?php echo $_SESSION[KEY_POS] ?>";
+            document.getElementById("nav-md").style.backgroundImage = "url('"+ottieniImmagine(percorso)+"')";
+            componentHandler.upgradeDom();
+        }
+    });
+
+</script>
+
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row header-style">
@@ -60,7 +77,7 @@
       </div>
     </header>
     <div class="mdl-layout__drawer">
-      <div class="nav-md">
+      <div id="nav-md" class="nav-md">
         <span class="mdl-layout-title nome_dr"><?php echo $_SESSION[KEY_NAME] ?></span>
         <span class="mdl-layout-title tipo_dr"><?php
         if(isset($_SESSION[KEY_ROLE]) && $_SESSION[KEY_ROLE] == 1){

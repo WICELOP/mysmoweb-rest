@@ -48,6 +48,14 @@ function visualizzaEsercente($headers, $uri){
     }
 }
 
+function modificaEsercente($headers, $uri){
+    if(strpos($headers["Accept"], 'html') !== false){
+        require ('../model/auth.php');
+        require ('../view/modificaEsercente.php');
+        visualizzaPagina($dbc);
+    }
+}
+
 function proxyImage($headers, $uri){
     require ('../model/auth.php');
     require ('../view/proxyImage.php');

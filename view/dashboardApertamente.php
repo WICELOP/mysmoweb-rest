@@ -15,15 +15,20 @@ function visualizzaPagina($dbc){
         background-color: rgb(63, 81, 181);
     }
 
+    .card-dashboard{
+        height: 150px;
+    }
+
     .demo-card-wide.mdl-card {
         width: 512px;
-        margin: auto;
+        margin: auto 5%;
         margin-top: 0;
     }
 
     .dashboard {
         display: flex;
         margin: 10% auto;
+        justify-content: center;
     }
 
     .demo-list-two {
@@ -97,8 +102,8 @@ function visualizzaPagina($dbc){
 <div class="dashboard">
 
     <!--Card per grafici sommativi-->
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="margin-right: 5%;">
-        <div class="mdl-card__title" style="height: 150px;">
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title card-dashboard">
             <h2 class="mdl-card__title-text">Grafici sommativi</h2>
         </div>
         <div class="mdl-card__supporting-text" style="padding: 12px;">
@@ -151,8 +156,8 @@ function visualizzaPagina($dbc){
     </div>
 
     <!--Card per ultimi questionari (ordinati per data creazione)-->
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="margin-left: 5%;">
-        <div class="mdl-card__title" style="height: 150px;">
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title card-dashboard">
             <h2 class="mdl-card__title-text">Ultimi questionari creati</h2>
         </div>
         

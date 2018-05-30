@@ -1,18 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: giovannibrumana
- * Date: 13/04/18
- * Time: 13:28
- */
 
-// require_once ('../config.php');
-// require ('../utils.php');
-
-if (!empty($_COOKIE['id_amministratore'])) {
+if (!empty($_GET['id'])) {
     $statement = $dbc->prepare("SELECT email, nome, percorso_logo, scrittura, id_questionario_qrcode FROM amministratore WHERE id_amministratore = ?");
     $statement->bind_param("i", $id_amministratore);
-    $id_amministratore = $_COOKIE['id_amministratore'];
+    $id_amministratore = $_GET['id'];
     $statement->execute();
     $statement->bind_result($email, $nome, $percorso_logo, $scrittura, $id_questionario_qrcode);
     $statement->fetch();
@@ -26,7 +17,7 @@ if (!empty($_COOKIE['id_amministratore'])) {
     $output['esercizi'] = array();
     $statement = $dbc->prepare("SELECT paese FROM esercizio WHERE id_amministratore = ?");
     $statement->bind_param("i", $id_amministratore);
-    $id_amministratore = $_COOKIE['id_amministratore'];
+    $id_amministratore = $_GET['id'];
     $statement->execute();
     $statement->bind_result($paese);
     while ($statement->fetch()) {

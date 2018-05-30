@@ -8,4 +8,3 @@
         move_uploaded_file($_FILES['file']['tmp_name'], 'C:/images/uploads/' . $_FILES['file']['name']);
         //str replace
     }
-?>
