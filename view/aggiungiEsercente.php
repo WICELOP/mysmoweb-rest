@@ -10,21 +10,11 @@ $nomesito = "Aggiungi un nuovo esercente";
 
 <style>
 
-    .demo-card-wide.mdl-card {
-        width: 650px;
-    }
-
     .mdl-button {
         color: white;
         font-size: 18px;
         text-align: center;
         line-height: 36px;
-    }
-
-    #topcard {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 
     #nomees {

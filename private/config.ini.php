@@ -8,7 +8,7 @@ password = QrCodeMail99
 
 [mysql]
 user = root
-password = 
+password = caccola
 host = localhost
 dbname = mysmartopinion
 

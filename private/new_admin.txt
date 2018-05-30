@@ -1,0 +1,8 @@
+per inserire nuovi amministratori nel db
+eseguiamo la seguente query:
+
+INSERT INTO `amministratore` (email, password, nome, percorso_logo, lettura, scrittura, `data`) VALUES ('vale99.007@hotmail.it', SHA2('caccola', 256), 'Valemochuz', 'C:/images/uploads/', '1', '1', CURDATE());
+
+(sostituisco al posto dei vari parametri i miei valori)
+
+mysqladmin -u root -p password caccola

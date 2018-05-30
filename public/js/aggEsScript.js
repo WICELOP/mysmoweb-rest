@@ -77,6 +77,7 @@ function ottieniImmagine(percorso) {
 
 
 function aggiungiEsercente() {
+    //password id default aspettandoOTP
     var json = JSON.stringify(new Esercente(getNome(), getEmail(), "aspettandoOTP", getFileName(), getPuntiVendita()));
     $.ajax({
         //imposto il tipo di invio dati (GET O POST)

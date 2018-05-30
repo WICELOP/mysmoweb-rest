@@ -61,22 +61,28 @@
     </header>
     <div class="mdl-layout__drawer">
       <div class="nav-md">
-        <!-- da modificare... -->
-        <span class="mdl-layout-title"><?php echo $_SESSION[KEY_LOGGED_IN] ?></span>
+        <span class="mdl-layout-title nome_dr"><?php echo $_SESSION[KEY_NAME] ?></span>
+        <span class="mdl-layout-title tipo_dr"><?php
+        if(isset($_SESSION[KEY_ROLE]) && $_SESSION[KEY_ROLE] == 1){
+          echo "Apertamente";
+        }else{
+          echo "Esercente";
+        } 
+        ?></span>
       </div>
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="listaEsercenti"><i class="material-icons md-ip">list</i> Lista
-          esercenti</a>
-          <a class="mdl-navigation__link" href="aggiungiEsercente"><i class="material-icons md-ip">person_add</i>
-            Aggiungi esercente</a>
-            <a class="mdl-navigation__link" href="aggiungiCodiceSconto.php"><i
-              class="material-icons md-ip">library_add</i>
-              Aggiungi buoni sconto</a>
-              <div class="mdl-layout-spacer"></div>
-              <a class="mdl-navigation__link" href="segnalaBug"><i class="material-icons md-ip">feedback</i> Feedback</a>
-            </nav>
-          </div>
-          <main class="mdl-layout__content">
-            <div class="page-content">
+        esercenti</a>
+        <a class="mdl-navigation__link" href="aggiungiEsercente"><i class="material-icons md-ip">person_add</i>
+        Aggiungi esercente</a>
+        <a class="mdl-navigation__link" href="aggiungiCodiceSconto.php"><i
+          class="material-icons md-ip">library_add</i>
+        Aggiungi buoni sconto</a>
+        <div class="mdl-layout-spacer"></div>
+        <a class="mdl-navigation__link" href="segnalaBug"><i class="material-icons md-ip">feedback</i> Feedback</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
 
-              <!--Fine header-->
+        <!--Fine header-->

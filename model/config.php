@@ -37,6 +37,9 @@ define('BASE_URL', 'http://' . $_SERVER['HTTP_HOST']);
 
 // Session
 define('KEY_LOGGED_IN', 'logged_user');
+define('KEY_NAME', 'nome');
+define('KEY_ROLE', 'scrittura');
+define('KEY_POS', 'percorso');
 
 // Login Form
 define('KEY_LOGIN_USERNAME', 'username');
@@ -44,14 +47,6 @@ define('KEY_LOGIN_PASSWORD', 'password');
 // pulsante di login
 define('KEY_LOGIN_SUBMIT', 'login_clicked');
 
-// Reset Password
-define('KEY_SUBMIT_RESET_PASSWORD', 'btn_reset_password');
-define('KEY_RESET_PASSWORD_EMAIL', 'input_reset_password');
-define('KEY_FORCE_RESET_PASSWORD', 'forcereset_pass');
-// forceResetPassword.php
-define('KEY_RESETPASS_PASS', 'resetform_pass');
-define('KEY_RESETPASS_PASSCONFIRM', 'resetform_passconf');
-define('KEY_RESETPASS_SUBMIT', 'resetform_submit');
 // Used in login.php
 define('KEY_LOGRESET_USERNAME', 'lou');
 define('KEY_LOGRESET_TOKEN', 'lot');

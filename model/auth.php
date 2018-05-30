@@ -31,7 +31,7 @@ if (isset($_POST[KEY_LOGIN_SUBMIT]))
     $user = getPostString($dbc, $errors, KEY_LOGIN_USERNAME);
     $pass = getPostString($dbc, $errors, KEY_LOGIN_PASSWORD);
 
-    $q = "SELECT id_amministratore FROM amministratore WHERE email=? AND password=?";
+    $q = "SELECT id_amministratore, nome, scrittura, percorso_logo FROM amministratore WHERE email=? AND password=SHA2(?, 256)";
     $stmt = $dbc->prepare($q);
     $stmt->bind_param("ss", $user, $pass);
     $stmt->execute();
@@ -41,7 +41,12 @@ if (isset($_POST[KEY_LOGIN_SUBMIT]))
     // corrispondenza utente trovata, salvare il valore tramite le sessioni
     if ($stmt_result->num_rows == 1)
     {
+        $risultati = mysqli_fetch_array($stmt_result,MYSQLI_NUM);
+
         $_SESSION[KEY_LOGGED_IN] = $user;
+        $_SESSION[KEY_NAME] = $risultati[1];
+        $_SESSION[KEY_ROLE] = $risultati[2];
+        $_SESSION[KEY_POS] = $risultati[3];
 
         // redirect on index page
         echo '<script type="text/javascript"> window.open("' . BASE_URL . '" , "_self");</script>';
@@ -57,8 +62,8 @@ if (isset($_POST[KEY_LOGIN_SUBMIT]))
     $guest_links = ['/login', '/notEnoughPermissions'];
 
     // logged in
-    if(isset($_SESSION[KEY_LOGGED_IN]))
-    {
+    if(isset($_SESSION[KEY_LOGGED_IN])){
+
         $user = $_SESSION[KEY_LOGGED_IN];
 
         $q = "SELECT id_amministratore FROM amministratore WHERE email=?";
@@ -72,6 +77,9 @@ if (isset($_POST[KEY_LOGIN_SUBMIT]))
         if ($stmt_result->num_rows != 1)
         {
             unset($_SESSION[KEY_LOGGED_IN]);
+            unset($_SESSION[KEY_NAME]);
+            unset($_SESSION[KEY_ROLE]);
+            unset($_SESSION[KEY_POS]);
 
             if (!in_array(basename($_SERVER['SCRIPT_NAME']), $guest_links))
             {

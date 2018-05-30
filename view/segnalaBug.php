@@ -33,9 +33,13 @@ function visualizzaPagina(){
         line-height: 36px;
     }
 
+    .mdl-textfield__label.casella:after {
+    bottom: 0px;
+}
+
     .text-form {
         margin: 12px 0;
-        font-size: 20px;
+        font-size:18px;
     }
 
     .mdl-textfield__label {
@@ -52,6 +56,9 @@ function visualizzaPagina(){
 <script>
     $(document).ready(function () {
         $("#submitreport").click(function () {
+
+            // Da implementare...            
+            
             /*var txtFile = "var/www/html/mysmoweb/docs/BugReport.txt";
             var file = new File(txtFile);
             file.open("w"); // open file with write access
@@ -94,9 +101,9 @@ function visualizzaPagina(){
             </div>
         </div>
         <form action="#">
-            <div class="mdl-textfield mdl-js-textfield" style="padding-top: 0;">
+            <div class="mdl-textfield mdl-js-textfield" style="padding: 0;">
                 <textarea class="mdl-textfield__input" type="text" rows="3" maxlength="300" id="report"></textarea>
-                <label class="mdl-textfield__label" for="report" style="top: 8px;">Descrivi il problema... </label>
+                <label class="mdl-textfield__label casella" for="report" style="top: 8px;">Descrivi il problema... </label>
             </div>
         </form>
     </div>

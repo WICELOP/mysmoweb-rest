@@ -5,6 +5,10 @@
     border: 0;
 }
 
+.mdl-card{
+    border-radius: 10px;
+}
+
 .mdl-layout__drawer.is-visible {
     left: 0;
 }
@@ -20,10 +24,19 @@
     width: auto;
     height: 130px;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column-reverse;
     padding: 24px;
     background-color: rgb(63, 81, 181);
     color: white;
+}
+
+.nome_dr{
+    font-size: 24px;
+}
+
+.tipo_dr{
+    padding: 8px 0;
+    font-size: 18px;
 }
 
 /*classe per posizionare le icone nel drawer*/
@@ -170,7 +183,7 @@
 }
 
 .demo-card-wide.mdl-card {
-    width: 600px;
+    width: 670px;
     margin: 10% auto;
 }
 
