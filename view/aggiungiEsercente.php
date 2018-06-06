@@ -180,7 +180,7 @@ function visualizzaPagina(){
 
 <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
     <div class="mdl-snackbar__text"></div>
-    <button class="mdl-snackbar__action" type="button"></button>
+    <button class="mdl-snackbar__action" type="button" style="display: none;"></button>
 </div>
 
     <!--Fine aggiungiEsercente-->

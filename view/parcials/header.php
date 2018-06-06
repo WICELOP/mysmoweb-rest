@@ -92,8 +92,7 @@
         esercenti</a>
         <a class="mdl-navigation__link" href="aggiungiEsercente"><i class="material-icons md-ip">person_add</i>
         Aggiungi esercente</a>
-        <a class="mdl-navigation__link" href="aggiungiCodiceSconto.php"><i
-          class="material-icons md-ip">library_add</i>
+        <a class="mdl-navigation__link" href="aggiungiBuono"><i class="material-icons md-ip">library_add</i>
         Aggiungi buoni sconto</a>
         <div class="mdl-layout-spacer"></div>
         <a class="mdl-navigation__link" href="segnalaBug"><i class="material-icons md-ip">feedback</i> Feedback</a>

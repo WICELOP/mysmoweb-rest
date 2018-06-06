@@ -30,19 +30,6 @@ if (!empty($_POST['esercente'])) {
     }
 
     $statement->close();
-
-/*    $extension = explode(".", $percorso_logo)[1];
-    switch ($extension) {
-        case "jpg":
-            $img = resize_imagejpg($percorso_logo, 512, 512);
-            imagejpeg($img, $percorso_logo);
-            break;
-        case "png":
-            $img = resize_imagepng($percorso_logo, 512, 512);
-            imagepng($img, $percorso_logo);
-            break;
-    }*/
-    
 }
 
 $dbc->close();

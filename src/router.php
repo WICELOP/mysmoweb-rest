@@ -82,6 +82,16 @@ function get($uri){
             break;
         }
 
+        //pagina per l'aggiunta dei buoni sconto
+        case '/aggiungiBuono':
+        if(isset($uriget)){
+            notFound();
+            break;
+        }else{
+            aggiungiBuono($headers, $uri);
+            break;
+        }
+
         //pagina per la visualizzazione dell'immagine
         case '/proxyImage':
         if(isset($uriget)){

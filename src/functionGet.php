@@ -56,6 +56,14 @@ function modificaEsercente($headers, $uri){
     }
 }
 
+function aggiungiBuono($headers, $uri){
+    if(strpos($headers["Accept"], 'html') !== false){
+        require ('../model/auth.php');
+        require ('../view/aggiungiCodiceSconto.php');
+        visualizzaPagina();
+    }
+}
+
 function proxyImage($headers, $uri){
     require ('../model/auth.php');
     require ('../view/proxyImage.php');

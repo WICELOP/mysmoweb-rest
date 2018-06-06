@@ -228,3 +228,7 @@ a {
     display: flex;
     justify-content: center;
 }
+
+.mdl-snackbar__text {
+    padding: 12px;
+}
